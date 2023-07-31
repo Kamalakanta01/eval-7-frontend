@@ -4,10 +4,10 @@ import axios from "axios"
 export default function Login(){
     const[email,setEmail]=useState("")
     const[password,setPassword]=useState("")
-
+    console.log(email,password)
     function handleLogin(e){
         e.preventDefault()
-        axios.get(`https://blogs-site-backend-unit7.onrender.com/login`,{
+        axios.post(`https://blogs-site-backend-unit7.onrender.com/login`,{
             email:email,
             password:password
         })
