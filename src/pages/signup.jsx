@@ -1,4 +1,4 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Stack, Button } from "@chakra-ui/react";
 import { useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
@@ -26,14 +26,12 @@ export default function Signup(){
 
     return (
         <Box>
-            <form onSubmit={handleSignup}>
-                <Stack w={"50%"} margin={"auto"}>
-                <input type="text" value={name} className="name" placeholder="name" onChange={(e)=>{setName(e.target.value)}}/>
-                <input type="email" value={email} className="email" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
-                <input type="password" value={password} className="password" placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}/>
-                <input type="submit" className="button"/>
-                </Stack>
-            </form>
+            <Stack w={"50%"} margin={"auto"}>
+            <input type="text" value={name} className="name" placeholder="name" onChange={(e)=>{setName(e.target.value)}}/>
+            <input type="email" value={email} className="email" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type="password" value={password} className="password" placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}/>
+            <Button onClick={handleSignup}>Signup</Button>
+            </Stack>
         </Box>
     )
 }

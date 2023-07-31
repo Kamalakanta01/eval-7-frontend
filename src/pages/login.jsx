@@ -1,4 +1,4 @@
-import { Box, Stack } from "@chakra-ui/react";
+import { Box, Button, Stack } from "@chakra-ui/react";
 import { useState } from "react";
 import { store } from "../redux/store"
 import axios from "axios"
@@ -25,13 +25,12 @@ export default function Login(){
 
     return (
         <Box>
-            <form onSubmit={handleLogin}>
-                <Stack w={"50%"} margin={"auto"}>
-                <input type="email" value={email} className="email" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
-                <input type="password" value={password} className="password" placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}/>
-                <input type="submit" className="button"/>
-                </Stack>
-            </form>
+            <Stack w={"50%"} margin={"auto"}>
+            <input type="email" value={email} className="email" placeholder="email" onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type="password" value={password} className="password" placeholder="password" onChange={(e)=>{setPassword(e.target.value)}}/>
+            <Button onClick={handleLogin}>Login</Button>
+            <Button onClick={()=>{navigation("/signup")}}>Signup</Button>
+            </Stack>
         </Box>
     )
 }
