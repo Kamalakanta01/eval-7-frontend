@@ -7,7 +7,7 @@ export default function Login(){
 
     function handleLogin(e){
         e.preventDefault()
-        axios.get(`http://localhost:8080/blogs`,{
+        axios.get(`https://blogs-site-backend-unit7.onrender.com/login`,{
             email:email,
             password:password
         })
